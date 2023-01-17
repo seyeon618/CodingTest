@@ -1,0 +1,5 @@
+# ninja log v5
+4	582	6956575798149337	CMakeFiles/CodingTest.dir/main.cpp.obj	d167f94ce53dd270
+1	771	6956574811744875	CMakeFiles/CodingTest.dir/src/Lev2.cpp.obj	138443e5a7fb1813
+583	800	6956575800279812	CodingTest.exe	75c608b6a42e36ff
+2	290	6956576073864873	build.ninja	cb7fced4809ffc41
