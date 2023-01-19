@@ -19,4 +19,7 @@ vector<int> repeatBinaryTrans(string strText);
 //! expression of number
 int getExpressionOfNumber(int nNum);
 
+//! least common multiple of list
+int getLeastCommonMultipleOfList(vector<int> vecNum);
+
 #endif //CODINGTEST_LEV2_H

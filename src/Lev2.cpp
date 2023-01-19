@@ -99,3 +99,19 @@ int getExpressionOfNumber(int nNum)
     }
     return nCount;
 }
+
+int getLeastCommonMultipleOfList(vector<int> vecNum){
+    int nCnt = 1;
+    while(true){
+        int nVal = nCnt * vecNum[vecNum.size()-1];
+        bool bOk = true;
+        for(int i = 0; i < vecNum.size()-1; i++) {
+            bOk = bOk && (nVal % vecNum[i] == 0);
+        }
+
+        if(bOk)
+            return nVal;
+
+        nCnt++;
+    }
+}
