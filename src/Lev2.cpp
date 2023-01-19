@@ -2,10 +2,12 @@
 // Created by seyeon on 2023-01-17.
 //
 #include "../header/Lev2.h"
+#include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include <bitset>
 
 using namespace std;
 
@@ -45,4 +47,55 @@ bool isBracket(const string& strBracket)
     }
 
     return nStack == 0;
+}
+
+vector<int> repeatBinaryTrans(string strText){
+    int nZeroCnt = 0;
+    int nTransCnt = 0;
+
+    auto to_binary = [](int nNum) {
+        string strBinaryText;
+        while(nNum != 0){
+            strBinaryText += nNum % 2 == 0 ? "0" : "1";
+            nNum /= 2;
+        }
+        reverse(strBinaryText.begin(), strBinaryText.end());
+        return strBinaryText;
+    };
+
+    while(strText != "1") {
+        for (int i = 0; i < strText.size(); i++) {
+            cout << strText[i] << endl;
+            if (strText.at(i) == '0') {
+                strText.erase(strText.begin() + i);
+                nZeroCnt++;
+            }
+        }
+        cout << strText.size() << endl;
+        strText = to_binary(strText.size());
+        cout << strText << endl;
+
+        nTransCnt++;
+    }
+    return {nZeroCnt, nTransCnt};
+}
+
+int getExpressionOfNumber(int nNum)
+{
+    int nCount = 0;
+    for(int i=1; i<=nNum; i++)
+    {
+        int nSum = 0;
+        for(int j=i; j<=nNum; j++)
+        {
+            nSum += j;
+            if(nSum == nNum) {
+                nCount++;
+                break;
+            }
+            if(nSum > nNum)
+                break;
+        }
+    }
+    return nCount;
 }

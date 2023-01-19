@@ -13,4 +13,10 @@ int getMinValue(vector<int> vecA, vector<int> vecB);
 
 bool isBracket(const string& strBracket);
 
+//! repeat binary tranformation
+vector<int> repeatBinaryTrans(string strText);
+
+//! expression of number
+int getExpressionOfNumber(int nNum);
+
 #endif //CODINGTEST_LEV2_H
