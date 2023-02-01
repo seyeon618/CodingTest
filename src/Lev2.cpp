@@ -2,12 +2,13 @@
 // Created by seyeon on 2023-01-17.
 //
 #include "../header/Lev2.h"
+#include <algorithm>
+#include <bitset>
 #include <iostream>
+#include <numeric>
+#include <map>
 #include <string>
 #include <vector>
-#include <algorithm>
-#include <numeric>
-#include <bitset>
 
 using namespace std;
 
@@ -114,4 +115,45 @@ int getLeastCommonMultipleOfList(vector<int> vecNum){
 
         nCnt++;
     }
+}
+
+vector<int> islandTrip(vector<string> mapOfIsland){
+    vector<vector<pair<int, bool>>> vecMaps;
+    for(int i=0; i<mapOfIsland.size(); i++){
+        vector<pair<int, bool>> vecMap;
+        for(int j=0; j<mapOfIsland[i].size(); j++) {
+            if (mapOfIsland[i][j] == 'X')
+                vecMap.push_back(make_pair<int, bool>(0, true));
+            else
+                vecMap.push_back(make_pair<int, bool>(mapOfIsland[i][j] - '0', false));
+        }
+        vecMaps.push_back(vecMap);
+    }
+
+    vector<int> vecAnswer;
+    for(int i=0; i<vecMaps.size(); i++){
+        for(int j=0; j<vecMaps[i].size(); j++){
+            int islandSum = dfs(vecMaps, i, j);
+            if(islandSum > 0)
+                vecAnswer.push_back(islandSum);
+        }
+    }
+
+    if(vecAnswer.size() <= 0)
+        return {-1};
+
+    sort(vecAnswer.begin(), vecAnswer.end());
+    return vecAnswer;
+}
+
+int dfs(vector<vector<pair<int, bool>>>& vecMap, int i, int j){
+    if(i < 0 || j < 0 || i >= vecMap.size() || j >= vecMap[0].size())
+        return 0;
+
+    if(vecMap[i][j].first == 0 || vecMap[i][j].second)
+        return 0;
+
+    vecMap[i][j].second = true;
+
+    return vecMap[i][j].first + dfs(vecMap, i+1, j) + dfs(vecMap, i-1, j) + dfs(vecMap, i, j+1) + dfs(vecMap, i, j-1);
 }

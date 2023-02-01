@@ -24,5 +24,11 @@ int main()
 
     cout << "Least Common Multiple Of List: " << getLeastCommonMultipleOfList({2, 6, 8, 14}) << endl;
     cout << "===============================================================" << endl;
+
+    cout << "Island trip" << endl;
+    vector<int> vecIsland = islandTrip({"X591X","X1X5X","X231X", "1XXX1"});
+    for(int i=0; i<vecIsland.size(); i++){
+        cout << "out: " << vecIsland[i] << endl;
+    }
     return 0;
 }

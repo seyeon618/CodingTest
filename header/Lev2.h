@@ -22,4 +22,8 @@ int getExpressionOfNumber(int nNum);
 //! least common multiple of list
 int getLeastCommonMultipleOfList(vector<int> vecNum);
 
+//! island trip
+vector<int> islandTrip(vector<string> mapOfIsland);
+int dfs(vector<vector<pair<int, bool>>>&, int i, int j);
+
 #endif //CODINGTEST_LEV2_H
