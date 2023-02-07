@@ -3,4 +3,7 @@ project(CodingTest)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(CodingTest main.cpp src/Lev2.cpp)
+add_executable(CodingTest
+               main.cpp
+               src/Lev2.cpp
+               src/Lev3.cpp)

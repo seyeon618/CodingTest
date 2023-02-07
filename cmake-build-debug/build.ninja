@@ -61,6 +61,12 @@ build CMakeFiles/CodingTest.dir/src/Lev2.cpp.obj: CXX_COMPILER__CodingTest_Debug
   OBJECT_DIR = CMakeFiles\CodingTest.dir
   OBJECT_FILE_DIR = CMakeFiles\CodingTest.dir\src
 
+build CMakeFiles/CodingTest.dir/src/Lev3.cpp.obj: CXX_COMPILER__CodingTest_Debug E$:/CodingTest/src/Lev3.cpp || cmake_object_order_depends_target_CodingTest
+  DEP_FILE = CMakeFiles\CodingTest.dir\src\Lev3.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CodingTest.dir
+  OBJECT_FILE_DIR = CMakeFiles\CodingTest.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CodingTest
@@ -69,7 +75,7 @@ build CMakeFiles/CodingTest.dir/src/Lev2.cpp.obj: CXX_COMPILER__CodingTest_Debug
 #############################################
 # Link the executable CodingTest.exe
 
-build CodingTest.exe: CXX_EXECUTABLE_LINKER__CodingTest_Debug CMakeFiles/CodingTest.dir/main.cpp.obj CMakeFiles/CodingTest.dir/src/Lev2.cpp.obj
+build CodingTest.exe: CXX_EXECUTABLE_LINKER__CodingTest_Debug CMakeFiles/CodingTest.dir/main.cpp.obj CMakeFiles/CodingTest.dir/src/Lev2.cpp.obj CMakeFiles/CodingTest.dir/src/Lev3.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CodingTest.dir

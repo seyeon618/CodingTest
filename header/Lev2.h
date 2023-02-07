@@ -26,7 +26,4 @@ int getLeastCommonMultipleOfList(vector<int> vecNum);
 vector<int> islandTrip(vector<string> mapOfIsland);
 int dfs(vector<vector<pair<int, bool>>>&, int i, int j);
 
-//! performance review
-int performanceReview(vector<vector<int>> score);
-bool cmp(vector<int> a, vector<int> b);
 #endif //CODINGTEST_LEV2_H
